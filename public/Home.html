@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chatter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="Home.css"><link href="https://fontstruct.com/fontstructions/show/2424136">
+    </head>
+
+    <!--this is for the soundtrack box-->
+    <body style="margin: 0%;">        
+        <div style = "height:960px; width:1910px; background-color: black;">
+            <div id = "left_box">
+                <div style="float: left; width: 50%; height:40%;">
+                    <img style="height:150px; width:150px;" src="pictures/record_player.gif">
+                    <li>
+                        <p style="color: white; font-size: 10; font-family: 'Pixelify Sans';">Snowy</p>
+                        <audio controls>
+                            <source src="pictures/snowy.mp3" type="audio/mpeg">
+                        </audio>
+                        <p style="color: white; font-size: 10; font-family: 'Pixelify Sans';">Fallen Down</p>
+                        <audio controls>
+                            <source src="pictures/fallen_down.mp3" type="audio/mpeg">
+                        </audio>
+                    </li>
+                </div>
+                <div style="float: left; width: 50%; height:40%;">
+                </div>
+            </div>
+
+
+            <!--this is for the box above the soundtrack box which displays content based on the options buttons such as "people", and "items"-->
+            <div id="top_left_box">
+                <p id="top_left_box_text" style="color:white;">Nothing for now........</p>
+            </div>
+
+
+
+
+
+
+
+            <img style="height:100%; width:100%;" src="pictures/animated_background.gif">
+            <div style="position:absolute; top:10px; margin-left: 350px;">
+                <div style="border-radius: 10px; border-color: white; border-width: 5px; width: 1300px; height:850px; border-style: solid;">
+                    <li style="display: block">
+                        <div style="height:150px; width:100%; background-color: black; border-radius: 2px; display: flex;">
+                            <img style="border-radius: 10px; margin-left: 39px;" src="pictures/sans.PNG">
+                            <div style = "width: 70%; height:80%; float:right; border-radius: 20px; border-color: white; border-width: 1px; border-style: solid; background-color: black; margin-right: 100px; margin-top: 10px;">
+                                <p id = "sans_text" style="color: white; text-align: center; font-size: 25px; font-family: 'Pixelify Sans'; height:100%;">*<span style='color:rgb(54, 226, 238)'>You</span> feel like your gonna have a bad time.....Just kidding, just don't cause any <span style='color:rgb(54, 226, 238)'>trouble</span></p>
+                            </div>
+                            <div style=" height: 30px; width: 70px; background-color: inherit; float: left; margin-top: 30px;">
+                                <button onclick="flower_animation()"  id ="flower_button">Click ME</button>
+                            </div>
+                            <div style="float:right; width: 20%; height:100%;">
+                                <img  class="flower_picture_evil" id="flower_picture_evil" style = "height:150px;" src="pictures/flower_2.gif">
+                                <img  id="flower_picture_happy" style = "height:150px;" src="pictures/flower.webp">
+                            </div>
+                        </div>
+                        <div style="position:absolute; height: 700px; width: 1298px; background-color: black;">
+                            <div style="height: 20%; width: 100%;">
+                                <div style="width:100%; height: 40%;">
+                                </div>
+                                <div style="width:100%; height: 40%; display: flex;">
+                                    <button onclick="show_box_text('Elliot')" style = "font-size: 27px; border-color: white; background: linear-gradient(to right, grey, grey, white, white); 
+                                    -webkit-text-fill-color: transparent; 
+                                    -webkit-background-clip: text;" class ="option_button option_button_text"
+                                    >People</button>
+
+                                    <button onclick="show_box_text('Sandwitch, Apple, Stick')" style = "font-size: 30px; border-color: orange; background: linear-gradient(to right, rgb(124, 3, 3), orange, orange, rgb(124, 3, 3)); 
+                                    -webkit-text-fill-color: transparent; 
+                                    -webkit-background-clip: text;" class ="option_button option_button_text"
+                                    >Items</button>
+
+                                    <button style = "font-size: 23px; border-color: rgb(155, 27, 27); background: linear-gradient(to right, rgb(95, 74, 38), rgb(124, 3, 3),rgb(95, 74, 38)); 
+                                    -webkit-text-fill-color: transparent; 
+                                    -webkit-background-clip: text;" class ="option_button option_button_text"
+                                    >Options</button>
+
+                                    <button style = "font-size: 30px; border-color: rgb(49, 168, 45); background: linear-gradient(to right, grey, grey, rgb(49, 168, 45), rgb(49, 168, 45)); 
+                                    -webkit-text-fill-color: transparent; 
+                                    -webkit-background-clip: text;" class ="option_button option_button_text"
+                                    >click</button>
+                                </div>
+                            </div>
+                            <div id="chat_messages">
+                                <p style = "color: white;"> <span style='color:rgb(54, 226, 238)'>sans@server_1 $</span> Welcome to the online chatbox</p>
+                            </div>
+                            <div style="float: right;">
+                                <img style="width:150px; height:300px;" src="pictures/Dog.PNG">
+                            </div>
+                            <div style="height:10%; width:100%; padding: 10px; display: flex;">
+                                <div style="height: 60%; width: 7%; float:left; margin-left: 40px;">
+                                    <button id = "send_button" onclick="send_message()">Send Message</button>
+                                </div>
+                                <div style="float:left; width: 93%;">
+                                    <input type="text" placeholder="Type Here" id="message_input">
+                                </div>
+                            </div>
+                            <div id="footer">
+                                <div style="float: left; width: 33%; height: 100%; padding:30px;">
+                                    <div style="float:left; width:15%;">
+                                        <img style = "height:60px;" src="pictures/papyrus.webp">
+                                    </div>
+                                    <div style="float: left; width: 40%;">
+                                        <p class="bottom_text">Time Spent:</p>
+                                    </div>
+                                    <div style="float: left; width: 10%;">
+                                        <p id = "time_spent" class="bottom_text">0</p>
+                                    </div>
+                                </div>
+                                <div style="float: left; width: 33%; height: 100%; padding:30px;">
+                                    <div style="float: left; width: 55%;">
+                                        <p class="bottom_text">Messages Sent:</p>
+                                    </div>
+                                    <div style="float: right; width: 45%;">
+                                        <p id = "messages_sent" class="bottom_text">10</p>
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 33%; height: 100%; padding:30px;">
+                                    <div style="float: left; width: 40%;">
+                                        <p class="bottom_text">Time Spent:</p>
+                                    </div>
+                                    <div style="float: right; width: 60%;">
+                                        <p id = "" class="bottom_text">10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <div>
+    
+                </div>
+            </div>
+        </div>
+        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+        <script src="Home.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+    </body>   
+</html>
